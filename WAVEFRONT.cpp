@@ -211,16 +211,6 @@ void ADXL344::update_accel_counts()
 
 	fill_acc_buff();					// Get the new values and put them in the buffer
 
-	// Determine the proper sign for each axis
-	// if(*(acc_buff_ptr + 1) & 0x02){ ACX = (signed int)((0xFF << 10) | ( ((*(acc_buff_ptr + 1) & 0x03) << 8) | (*(acc_buff_ptr + 0) << 0) )); }
-	// else{ ACX = (signed int)( ((*(acc_buff_ptr + 1) & 0x03) << 8) | (*(acc_buff_ptr + 0) << 0) ); }
-
-	// if(*(acc_buff_ptr + 3) & 0x02){ ACX = (signed int)((0xFF << 10) | ( ((*(acc_buff_ptr + 3) & 0x03) << 8) | (*(acc_buff_ptr + 2) << 0) )); }
-	// else{ ACX = (signed int)( ((*(acc_buff_ptr + 3) & 0x03) << 8) | (*(acc_buff_ptr + 2) << 0) ); }
-
-	// if(*(acc_buff_ptr + 5) & 0x02){ ACX = (signed int)((0xFF << 10) | ( ((*(acc_buff_ptr + 5) & 0x03) << 8) | (*(acc_buff_ptr + 4) << 0) )); }
-	// else{ ACX = (signed int)( ((*(acc_buff_ptr + 5) & 0x03) << 8) | (*(acc_buff_ptr + 4) << 0) ); }
-	
 	ACX = (signed int)( ((*(acc_buff_ptr + 1) & 0x03) << 8) | (*(acc_buff_ptr + 0) << 0) );
 	ACY = (signed int)( ((*(acc_buff_ptr + 3) & 0x03) << 8) | (*(acc_buff_ptr + 2) << 0) );
 	ACZ = (signed int)( ((*(acc_buff_ptr + 5) & 0x03) << 8) | (*(acc_buff_ptr + 4) << 0) );
