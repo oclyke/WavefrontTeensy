@@ -1,0 +1,17 @@
+Wavefront Chip Select Definitions:
+
+Connectors are labelled either RX or LX to indicate the Xth connector from the top (the top is where the teensy usb goes) on either the left or right side.
+
+CONNEC L0, CS3, Teensy PIN 0
+CONNEC L1, CS2, Teensy PIN 1
+CONNEC L2, CS4, Teensy PIN 2
+CONNEC L3, CS1, Teensy PIN 3
+CONNEC L4, CS6, Teensy PIN 4
+CONNEC L5, CS5, Teensy PIN 5
+
+CONNEC R0, CS7, Teensy PIN 6
+CONNEC R1, CS8, Teensy PIN 7
+CONNEC R2, CS9, Teensy PIN 8
+CONNEC R3, CS10, Teensy PIN 9
+CONNEC R4, CS11, Teensy PIN 10
+CONNEC R5, CS12, Teensy PIN 11
