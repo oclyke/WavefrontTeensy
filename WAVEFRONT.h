@@ -33,7 +33,7 @@ Go through and clean up all the serial print statements once it is working...
 
 
 // #define ADT7320_SPI_MAX_F 10000000			// Hz : Maximum SPI clock frequency
-// #define ADT7320_SPI_MAX_F 5000000			// Hz : The SPI frequncy we ultimately want to 
+//#define ADT7320_SPI_MAX_F 5000000			// Hz : The SPI frequncy we ultimately want to 
 #define ADT7320_SPI_MAX_F 1000000			// Hz : 1MHz, slower to see if that was the problem
 
 enum ADT7320_CODES {
@@ -83,7 +83,7 @@ private:
 
 
 
-// #define ADXL344_SPI_MAX_F 5000000		// Maximum SPI clock speed for the ADXL344
+//#define ADXL344_SPI_MAX_F 5000000		// Maximum SPI clock speed for the ADXL344
 #define ADXL344_SPI_MAX_F 1000000			// A lower speed for preliminary testing
 #define ADXL344_ACC_BUFF_LENGTH 6			// The number of bytes that the buffer for acceleration data will encompass
 
