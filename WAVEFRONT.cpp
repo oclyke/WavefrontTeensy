@@ -59,6 +59,7 @@ void ADT7320::initialize()
 
 	// Now set the desired (high resolution and continuous measurement) modes (This is done by setting the configuration register to 0b10000000)
 	SPI.beginTransaction(SPISettings(ADT7320_SPI_MAX_F,MSBFIRST,SPI_MODE0));
+	//SPI.transfer(0xAA); // this is to help reset the SPI lines to the right settings
 	digitalWrite(CS_PIN,LOW);
 	write_register_8(0b10000000, ADT7320_REG_Config);
 	digitalWrite(CS_PIN,HIGH);
@@ -70,6 +71,7 @@ int ADT7320::read_temperature()
 	int val = 0;
 
 	SPI.beginTransaction(SPISettings(ADT7320_SPI_MAX_F,MSBFIRST,SPI_MODE0));
+	//SPI.transfer(0xAA); // this is to help reset the SPI lines to the right settings
 	digitalWrite(CS_PIN,LOW);
 	val = (int)read_register_16(ADT7320_REG_Temp_val);
 	digitalWrite(CS_PIN,HIGH);
@@ -85,6 +87,7 @@ unsigned char ADT7320::read_status()
 	unsigned char val = 0;
 
 	SPI.beginTransaction(ADT7320_SPI_SETTINGS);
+	//SPI.transfer(0xAA); // this is to help reset the SPI lines to the right settings
 	digitalWrite(CS_PIN,LOW);
 	val = read_register_8(ADT7320_REG_Status);
 	digitalWrite(CS_PIN,HIGH);
